@@ -1,0 +1,14 @@
+%h1 Slack Channel Exporter
+
+%form{ action: 'export', method: :get }
+  %ul.list-unstyled
+    - @defaults.each.with_index do |channel, idx|
+      %li
+        %p
+          %button.btn.btn-default{ type: :submit, name: 'channel', value: channel }
+            = idx == 0 ? 'All' : channel
+
+%form.form-inline{ action: 'export', method: :get }
+  %p
+    %input.form-control{ type: :text, name: 'channel', placeholder: 'Other Channel' }
+    %button.btn.btn-default Go

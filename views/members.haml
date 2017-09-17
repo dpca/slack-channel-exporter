@@ -1,0 +1,22 @@
+%h1.channel= "##{channel}"
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Slack Handle
+      %th Phone
+      %th Confirmed Present
+      %th Confirmed Absent
+      %th Unaccounted
+  %tbody
+    - members.each do |member|
+      %tr
+        %td
+          -#%img.img-rounded{ src: member.profile.image_24, srcset: "#{member.profile.image_24} 1x, #{member.profile.image_48} 2x, #{member.profile.image_72} 3x" }
+          = SlackHelpers.member_name(member)
+        %td= member.name
+        %td= member.profile.phone
+        %td
+        %td
+        %td
