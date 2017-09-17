@@ -10,3 +10,7 @@ group :development do
   gem 'hashie'
   gem 'rspec'
 end
+
+group :test do
+  gem 'coveralls', require: false
+end
