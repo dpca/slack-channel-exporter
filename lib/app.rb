@@ -2,7 +2,8 @@ require 'sinatra/base'
 
 require_relative './slack_helpers'
 
-class Exporter < Sinatra::Application
+class Exporter < Sinatra::Base
+  set :views, settings.root + '/../views'
   set :haml, format: :html5
 
   get '/' do
