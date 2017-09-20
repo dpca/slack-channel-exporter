@@ -5,10 +5,11 @@
     - @defaults.each.with_index do |channel, idx|
       %li
         %p
-          %button.btn.btn-default{ type: :submit, name: 'channel', value: channel }
+          %button.btn.btn-secondary{ type: :submit, name: 'channel', value: channel }
             = idx == 0 ? 'All' : channel
 
 %form.form-inline{ action: 'export', method: :get }
-  %p
+  .input-group
     %input.form-control{ type: :text, name: 'channel', placeholder: 'Other Channel' }
-    %button.btn.btn-default Go
+    %span.input-group-btn
+      %button.btn.btn-secondary Go
